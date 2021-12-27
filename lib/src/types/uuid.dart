@@ -33,7 +33,7 @@ class BsonUuid extends BsonBinary {
   String toHexString() => hexString;
 
   @override
-  UuidValue get value => UuidValue.fromByteList(byteList);
+  UuidValue get value => UuidValue(Uuid.unparse(byteList), false);
 
   String toJson() => value.toString();
 }
