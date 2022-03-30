@@ -95,7 +95,7 @@ class BsonBinary extends BsonObject {
   factory BsonBinary.fromBuffer(BsonBinary buffer) {
     var data = extractData(buffer);
     if (data.subType == subtypeUuid) {
-      return BsonUuid.from(data.byteList);
+      return BsonUuid.from(GuidHelper.sortList(data.byteList));
     } else if (data.subType != subtypeBinary) {
       throw ArgumentError(
           'Binary subtype "${data.subType}" is not yet managed');
