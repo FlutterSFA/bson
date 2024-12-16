@@ -16,7 +16,7 @@ class GuidHelper {
     List<int> uuidBytes = UuidValue(uuid).toBytes();
     List<int> uuidNew = sortList(uuidBytes);
     String uuid2 = Uuid.unparse(Uint8List.fromList(uuidNew));
-    return UuidValue(uuid2, false);
+    return UuidValue(uuid2);
   }
 
   static String hextToGuid(String hex) {
